@@ -1,13 +1,17 @@
 import dotProp from "dot-prop";
 
+const flat = arrs => [].concat.apply([], arrs);
+
 const getPaths = (obj, path = "") => {
   if (["bool", "string", "number"].includes(typeof obj)) {
     return [null];
   }
-  if (typeof obj === "object") {
-    return Object.keys(obj)
-      .map(k => getPaths(obj[k], k).map(sub => (sub ? k + "." + sub : k)))
-      .flat();
+  if (typeof obj === "object" || Array.isArray(obj)) {
+    return flat(
+      Object.keys(obj).map(k =>
+        getPaths(obj[k], k).map(sub => (sub ? k + "." + sub : k))
+      )
+    );
   }
 };
 
