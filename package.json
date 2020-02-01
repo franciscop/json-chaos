@@ -1,6 +1,6 @@
 {
   "name": "json-chaos",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool that randomly changes properties in objects",
   "homepage": "https://github.com/franciscop/json-chaos#readme",
   "repository": "https://github.com/franciscop/json-chaos.git",
