@@ -1,4 +1,4 @@
-# JSON Chaos [![npm install json-chaos](https://img.shields.io/badge/npm%20install-json-chaos-blue.svg)](https://www.npmjs.com/package/json-chaos) [![test badge](https://github.com/franciscop/json-chaos/workflows/tests/badge.svg)](https://github.com/franciscop/json-chaos/actions)
+# JSON Chaos [![npm install json-chaos](https://img.shields.io/badge/npm%20install-json--chaos-blue.svg)](https://www.npmjs.com/package/json-chaos) [![test badge](https://github.com/franciscop/json-chaos/workflows/tests/badge.svg)](https://github.com/franciscop/json-chaos/actions)
 
 Inspired by [Chaos Monkey](https://en.wikipedia.org/wiki/Chaos_engineering), JSON Chaos is a tool that randomly changes properties in objects. It is useful to validate a strict API:
 
