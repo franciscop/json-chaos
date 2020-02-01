@@ -13,9 +13,16 @@ const getPaths = (obj, path = "") => {
 
 const pick = arr => arr[Math.floor(Math.random() * arr.length)];
 
+const values = {
+  string: () => pick(["hello", "world", "how", "are", "you"]),
+  boolean: () => pick([true, false]),
+  number: () => Math.floor(Math.random() * 10000)
+};
+
 const rotate = val => {
-  const types = {};
-  return values[typeof val];
+  const type = typeof val;
+  const dest = pick(Object.keys(values).filter(type => type !== typeof val));
+  return values[dest]();
 };
 
 export default (obj, level = 100) => {
