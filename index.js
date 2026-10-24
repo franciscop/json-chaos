@@ -2,14 +2,14 @@ import dotProp from "dot-prop";
 
 const flat = arrs => [].concat.apply([], arrs);
 
-const getPaths = (obj, path = "") => {
+const getPaths = obj => {
   if (["bool", "string", "number"].includes(typeof obj)) {
     return [null];
   }
   if (typeof obj === "object" || Array.isArray(obj)) {
     return flat(
       Object.keys(obj).map(k =>
-        getPaths(obj[k], k).map(sub => (sub ? k + "." + sub : k))
+        getPaths(obj[k]).map(sub => (sub ? k + "." + sub : k))
       )
     );
   }
@@ -24,7 +24,6 @@ const values = {
 };
 
 const rotate = val => {
-  const type = typeof val;
   const dest = pick(Object.keys(values).filter(type => type !== typeof val));
   return values[dest]();
 };
