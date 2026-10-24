@@ -1,4 +1,4 @@
-import dotProp from "dot-prop";
+import { getProperty, setProperty } from "dot-prop";
 
 const flat = arrs => [].concat.apply([], arrs);
 
@@ -40,8 +40,8 @@ export default (obj, level = 100) => {
 
     // Remove it so we don't change it again
     paths.splice(paths.indexOf(path), 1);
-    const val = dotProp.get(cloned, path);
-    dotProp.set(cloned, path, rotate(val));
+    const val = getProperty(cloned, path);
+    setProperty(cloned, path, rotate(val));
   }
   return cloned;
 };

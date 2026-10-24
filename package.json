@@ -15,31 +15,19 @@
     "random"
   ],
   "scripts": {
-    "build": "rollup index.js --name index --output.format umd | uglifyjs -o index.min.js",
-    "size": "echo $(gzip -c index.min.js | wc -c) bytes",
-    "start": "jest --watch",
-    "test": "jest --coverage",
+    "start": "bun test --watch",
+    "test": "bun test --coverage",
     "lint": "oxlint index.js"
   },
-  "main": "index.min.js",
-  "files": [],
+  "main": "index.js",
+  "type": "module",
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
-    "dot-prop": "^5.2.0"
+    "dot-prop": "^10.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "babel-jest": "^25.1.0",
-    "jest": "^25.1.0",
-    "jest-babel": "^1.0.1",
-    "oxlint": "^1.89.0",
-    "rollup": "^1.31.0",
-    "uglify-es": "^3.3.9"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": []
+    "oxlint": "^1.89.0"
   }
 }
